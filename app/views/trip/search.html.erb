@@ -1,3 +1,15 @@
-<% @cars.each do |car| %>
-  <%= car.name %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-offset-3 ">
+      <table class="table">
+        <% @cars.each do |car| %>
+        <tr>
+          <td>
+            <%= car.name %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
