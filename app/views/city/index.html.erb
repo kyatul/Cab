@@ -1,4 +1,11 @@
+<table>
+  <tr>
+    <td>Name</td>
+    <td></td>
+  </tr>
 <% @cities.each do |city| %>
-  <%= city.name %>
+  <tr>
+    <td><%= city.name %></td>
+  </tr>
 <% end %>
 <%= link_to 'Add City', admin_new_city_path %>

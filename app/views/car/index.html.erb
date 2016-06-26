@@ -1,4 +1,11 @@
+<table>
+  <tr>
+    <td>Name</td>
+    <td></td>
+  </tr>
 <% @cars.each do |car| %>
-  <%= car.name %>
+  <tr>
+    <td><%= car.name %></td>
+  </tr>
 <% end %>
 <%= link_to 'Add Car', admin_new_car_path %>

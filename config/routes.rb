@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'trip#index'
   post 'trip-search' => 'trip#search'
 
+  get 'admin' => 'admin#index'
   get 'admin/cities' => 'city#index'
   get 'admin/new_city' => 'city#new'
   post 'admin/new_city' => 'city#create'
