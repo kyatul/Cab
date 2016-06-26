@@ -1,0 +1,15 @@
+<table class="table">
+  <tr>
+    <th>City</th>
+    <th>Car</th>
+    <th>Rate/km</th>
+  </tr>
+  <% @cars_available.each do |car_available| %>
+    <tr>
+      <td><%= car_available.city.name %></td>
+      <td><%= car_available.car.name %></td>
+      <td><%= car_available.rate_per_km %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Add Car Availability', admin_new_car_available_path %>
