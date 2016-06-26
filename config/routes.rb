@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get 'admin/new_car' => 'car#new'
   post 'admin/new_car' => 'car#create'
 
+  get 'admin/routes' => 'route#index'
+  get 'admin/new_route' => 'route#new'
+  post 'admin/new_route' => 'route#create'
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

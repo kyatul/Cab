@@ -1,0 +1,15 @@
+<%= form_for :route do |f| %>
+  <%= f.label :from_city %>
+  <%= collection_select(:route, :source_city_id, @cities, :id, :name, {:prompt => false}) %><br>
+
+  <%= f.label :destination_city %>
+  <%= collection_select(:route, :destination_city_id, @cities, :id, :name, {:prompt => false}) %><br>
+
+  <%= f.label :distance %>
+  <%= f.text_field :distance %><br>
+
+  <%= f.label :travel_time %>
+  <%= f.text_field :travel_time %><br>
+
+  <%= f.submit "Add Route"%>
+<% end %>
