@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-md-6 col-sm-offset-3 ">
       <table class="table">
-        <% @cars.each do |car| %>
+        <% @cars_available.each do |car_available| %>
         <tr>
           <td>
-            <%= car.name %>
+            <%= car_available.car.name %>
           </td>
         </tr>
         <% end %>
