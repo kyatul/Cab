@@ -1,0 +1,7 @@
+<%= form_for :trip, url: trip_search_path do |f| %>
+  <%= f.label :from_city %>
+  <%= collection_select(:trip, :from_city_id, @cities, :id, :name, {:prompt => false}) %>
+  <%= f.label :destination_city %>
+  <%= collection_select(:product, :destination_city_id, @cities, :id, :name, {:prompt => false}) %>
+  <%= f.submit "Search Cabs"%>
+<% end %>
