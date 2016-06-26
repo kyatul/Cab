@@ -2,10 +2,14 @@
   <div class="row">
     <div class="col-md-6 col-sm-offset-3 ">
       <table class="table">
+        <tr><th>Car</th><th>Price</th></tr>
         <% @cars_available.each do |car_available| %>
         <tr>
           <td>
             <%= car_available.car.name %>
+          </td>
+          <td>
+            <%= car_available.rate_per_km * @distance %>
           </td>
         </tr>
         <% end %>

@@ -4,6 +4,9 @@ class TripController < ApplicationController
   end
 
   def search
+    # to be reomved later
+    params[:trip][:destination_city_id] = 2
+    @distance = Route.find_by(source_city_id: params[:trip][:source_city_id],destination_city_id: params[:trip][:destination_city_id]).distance
     @cars_available = CarsAvailable.where(city_id: params[:trip][:source_city_id])
   end
 
