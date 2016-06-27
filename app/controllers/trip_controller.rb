@@ -6,6 +6,7 @@ class TripController < ApplicationController
   def search
     # to be reomved later
     params[:trip][:destination_city_id] = 2
+    @travel_date = params[:trip][:travel_date]
     @route = Route.find_by(source_city_id: params[:trip][:source_city_id],
                            destination_city_id: params[:trip][:destination_city_id])
     @distance = @route.distance
