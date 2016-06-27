@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-6 col-sm-offset-3 ">
       <p>Travel Date : <%= @travel_date%> </p>
-      <p>One way Approx Distance: <%= @distance %></p>
-      <p>One way Approx Travel Time: <%= @travel_time %></p>
+      <p>One way Approx Distance: <%= @route.distance %></p>
+      <p>One way Approx Travel Time: <%= @route.travel_time %></p>
       <table class="table">
         <tr>
           <th>Car</th>
@@ -19,7 +19,7 @@
             <%= (car_available.car.seats) - 1 %> + 1
           </td>
           <td>
-            <%= car_available.rate_per_km * @distance %>
+            <%= car_available.rate_per_km * @route.distance %>
           </td>
         </tr>
         <% end %>

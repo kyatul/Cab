@@ -1,21 +1,28 @@
 class TripController < ApplicationController
   def index
-    @cities = City.find(source_city_ids)
+    @source_cities = City.find(Route.source_city_ids)
+    @destination_cities = City.find(Route.destination_city_ids(@source_cities.first))
+  end
+
+  def destination_cities
+    @cities = City.find(Route.destination_city_ids(params[:source_city_id]))
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def search
-    # to be reomved later
-    params[:trip][:destination_city_id] = 2
+    @source_city_id = params[:trip][:source_city_id]
+    @destination_city_id = params[:trip][:destination_city_id]
     @travel_date = params[:trip][:travel_date]
-    @route = Route.find_by(source_city_id: params[:trip][:source_city_id],
-                           destination_city_id: params[:trip][:destination_city_id])
-    @distance = @route.distance
-    @travel_time = @route.travel_time
-    @cars_available = CarsAvailable.where(city_id: params[:trip][:source_city_id])
+
+    @route = Route.find_by(source_city_id: @source_city_id,
+                           destination_city_id: @destination_city_id)
+
+    @cars_available = CarsAvailable.where(city_id: @source_city_id)
+                                   .includes(:car)
   end
 
   private
-    def source_city_ids
-      Route.select(:source_city_id).distinct.pluck(:source_city_id)
-    end
 end

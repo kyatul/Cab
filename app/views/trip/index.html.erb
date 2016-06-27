@@ -1,9 +1,11 @@
 <%= form_for :trip, url: trip_search_path do |f| %>
   <%= f.label :source_city %>
-  <%= collection_select(:trip, :source_city_id, @cities, :id, :name, {:prompt => false}) %>
+  <%= collection_select(:trip, :source_city_id, @source_cities, :id, :name, {:prompt => false}) %>
 
   <%= f.label :destination_city %>
-  <%= collection_select(:trip, :destination_city_id, @cities, :id, :name, {:prompt => false}) %><br>
+  <div id = "destination_cities">
+    <%= collection_select(:trip, :destination_city_id, @destination_cities, :id, :name, {:prompt => false}) %><br>
+  </div>
 
   <%= f.label :travel_date %>
   <%= f.text_field :travel_date, 'data-provide' => 'datepicker' %>
