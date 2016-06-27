@@ -4,11 +4,18 @@
       <p>One way Approx Distance: <%= @distance %></p>
       <p>One way Approx Travel Time: <%= @travel_time %></p>
       <table class="table">
-        <tr><th>Car</th><th>Price</th></tr>
+        <tr>
+          <th>Car</th>
+          <th>Seats</th>
+          <th>Price</th>
+        </tr>
         <% @cars_available.each do |car_available| %>
         <tr>
           <td>
             <%= car_available.car.name %>
+          </td>
+          <td>
+            <%= (car_available.car.seats) - 1 %> + 1
           </td>
           <td>
             <%= car_available.rate_per_km * @distance %>

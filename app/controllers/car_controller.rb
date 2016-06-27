@@ -19,6 +19,6 @@ class CarController < ApplicationController
   private
 
     def car_params
-      params.require(:car).permit(:name)
+      params.require(:car).permit(:name, :seats)
     end
 end
