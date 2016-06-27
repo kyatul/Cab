@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-sm-offset-3 ">
+      <p>One way Approx Distance: <%= @distance %></p>
+      <p>One way Approx Travel Time: <%= @travel_time %></p>
       <table class="table">
         <tr><th>Car</th><th>Price</th></tr>
         <% @cars_available.each do |car_available| %>
