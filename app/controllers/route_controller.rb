@@ -1,6 +1,6 @@
-class RouteController < ApplicationController
+class RouteController < AdminController
   def index
-    @routes = Route.all
+    @routes = Route.all.includes(:source_city).includes(:destination_city)
   end
 
   def new

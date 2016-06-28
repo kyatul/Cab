@@ -1,17 +1,23 @@
-<table class="table">
-  <tr>
-    <th>Source</th>
-    <th>Destination</th>
-    <th>Distance</th>
-    <th>Travel Time</th>
-  </tr>
-  <% @routes.each do |route| %>
-    <tr>
-      <td><%= route.source_city.name %></td>
-      <td><%= route.destination_city.name %></td>
-      <td><%= route.distance %></td>
-      <td><%= route.travel_time %></td>
-    </tr>
-  <% end %>
-</table>
-<%= link_to 'Add Route', admin_new_route_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-offset-3 ">
+      <table class="table">
+        <tr>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Distance</th>
+          <th>Travel Time</th>
+        </tr>
+        <% @routes.each do |route| %>
+        <tr>
+          <td><%= route.source_city.name %></td>
+          <td><%= route.destination_city.name %></td>
+          <td><%= route.distance %></td>
+          <td><%= route.travel_time %></td>
+        </tr>
+        <% end %>
+      </table>
+      <%= link_to 'Add Route', admin_new_route_path, class: "btn btn-primary"  %>
+    </div>
+  </div>
+</div>

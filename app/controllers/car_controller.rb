@@ -1,4 +1,4 @@
-class CarController < ApplicationController
+class CarController < AdminController
   def index
     @cars = Car.all
   end

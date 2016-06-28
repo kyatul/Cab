@@ -1,6 +1,6 @@
-class CarsAvailableController < ApplicationController
+class CarsAvailableController < AdminController
   def index
-    @cars_available = CarsAvailable.all.order(:city_id)
+    @cars_available = CarsAvailable.all.order(:city_id).includes(:city)
   end
 
   def new

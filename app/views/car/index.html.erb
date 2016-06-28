@@ -1,11 +1,18 @@
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th></th>
-  </tr>
-<% @cars.each do |car| %>
-  <tr>
-    <td><%= car.name %></td>
-  </tr>
-<% end %>
-<%= link_to 'Add Car', admin_new_car_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-offset-3 ">
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      <% @cars.each do |car| %>
+        <tr>
+          <td><%= car.name %></td>
+        </tr>
+      <% end %>
+      </table>
+      <%= link_to 'Add Car', admin_new_car_path, class: "btn btn-primary"  %>
+    </div>
+  </div>
+</div>
