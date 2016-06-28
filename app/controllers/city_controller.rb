@@ -4,6 +4,7 @@ class CityController < AdminController
   end
 
   def new
+    @city = City.new
   end
 
   def create

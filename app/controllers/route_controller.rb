@@ -14,6 +14,8 @@ class RouteController < AdminController
       flash[:success] = "Route added successfully"
       redirect_to admin_routes_path
     else
+      @cities = City.all
+      
       render 'new'
     end
   end

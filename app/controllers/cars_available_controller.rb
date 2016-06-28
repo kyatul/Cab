@@ -6,6 +6,8 @@ class CarsAvailableController < AdminController
   def new
     @cities = City.all
     @cars = Car.all
+
+    @car_available = CarsAvailable.new
   end
 
   def create
@@ -15,6 +17,9 @@ class CarsAvailableController < AdminController
       flash[:success] = "Car Availability added successfully"
       redirect_to admin_cars_available_path
     else
+      @cities = City.all
+      @cars = Car.all
+      
       render 'new'
     end
   end

@@ -4,6 +4,7 @@ class CarController < AdminController
   end
 
   def new
+    @car = Car.new
   end
 
   def create
