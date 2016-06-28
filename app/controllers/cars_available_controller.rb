@@ -12,6 +12,7 @@ class CarsAvailableController < AdminController
     @car_available = CarsAvailable.new(car_availability_params)
 
     if @car_available.save
+      flash[:success] = "Car Availability added successfully"
       redirect_to admin_cars_available_path
     else
       render 'new'
@@ -21,6 +22,7 @@ class CarsAvailableController < AdminController
   def destroy
     @car_available = CarsAvailable.find(params[:id])
     @car_available.destroy
+    flash[:info] = "Car Availability deleted successfully"
 
     redirect_to admin_cars_available_path
   end

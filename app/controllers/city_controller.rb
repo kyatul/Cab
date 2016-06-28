@@ -10,6 +10,7 @@ class CityController < AdminController
     @city = City.new(city_params)
 
     if @city.save
+      flash[:success] = "City added successfully"
       redirect_to admin_cities_path
     else
       render 'new'
@@ -19,6 +20,7 @@ class CityController < AdminController
   def destroy
     @city = City.find(params[:id])
     @city.destroy
+    flash[:info] = "City deleted successfully"
 
     redirect_to admin_cities_path
   end

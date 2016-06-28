@@ -11,6 +11,7 @@ class RouteController < AdminController
     @route = Route.new(route_params)
 
     if @route.save
+      flash[:success] = "Route added successfully"
       redirect_to admin_routes_path
     else
       render 'new'
@@ -20,6 +21,7 @@ class RouteController < AdminController
   def destroy
     @route = Route.find(params[:id])
     @route.destroy
+    flash[:info] = "Route deleted successfully"
 
     redirect_to admin_routes_path
   end
