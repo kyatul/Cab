@@ -19,7 +19,6 @@ class RouteController < AdminController
 
   private
     def route_params
-      byebug
       params.require(:route).permit(:source_city_id, :destination_city_id, :distance, :travel_time)
     end
 end

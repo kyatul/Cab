@@ -1,9 +1,25 @@
-<%= form_for :car do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class=container>
+  <div class="row">
+    <%= form_for :car,:html => {:class => "form-horizontal center"}  do |f| %>
+    <div class="form-group">
+      <%= f.label :name, class: "col-md-4 control-label"   %>
+      <div class="col-md-4">
+        <%= f.text_field :name, class: "form-control"  %>
+      </div>
+    </div>
 
-  <%= f.label :seats %>
-  <%= f.text_field :seats %>
+    <div class="form-group">
+      <%= f.label :seats, class: "col-md-4 control-label"   %>
+      <div class="col-md-4">
+        <%= f.text_field :seats, class: "form-control"  %>
+      </div>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <div class="form-group">
+      <div class="col-md-8 col-md-offset-4">
+        <%= f.submit class: 'btn btn-primary'%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

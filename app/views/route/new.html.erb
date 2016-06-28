@@ -1,15 +1,40 @@
-<%= form_for :route do |f| %>
-  <%= f.label :from_city %>
-  <%= collection_select(:route, :source_city_id, @cities, :id, :name, {:prompt => false}) %><br>
+<div class=container>
+  <div class="row">
+    <%= form_for :route,:html => {:class => "form-horizontal center"} do |f| %>
 
-  <%= f.label :destination_city %>
-  <%= collection_select(:route, :destination_city_id, @cities, :id, :name, {:prompt => false}) %><br>
+    <div class="form-group">
+      <%= f.label :from_city, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= collection_select(:route, :source_city_id, @cities, :id, :name, {:prompt => false}, class: "form-control") %>
+      </div>
+    </div>
 
-  <%= f.label :distance %>
-  <%= f.text_field :distance %><br>
+    <div class="form-group">
+      <%= f.label :destination_city, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= collection_select(:route, :destination_city_id, @cities, :id, :name, {:prompt => false}, class: "form-control") %>
+      </div>
+    </div>
 
-  <%= f.label :travel_time %>
-  <%= f.text_field :travel_time %><br>
+    <div class="form-group">
+      <%= f.label :distance, class: "col-md-4 control-label"   %>
+      <div class="col-md-4">
+        <%= f.text_field :distance, class: "form-control"  %>
+      </div>
+    </div>
 
-  <%= f.submit "Add Route"%>
-<% end %>
+    <div class="form-group">
+      <%= f.label :travel_time, class: "col-md-4 control-label"   %>
+      <div class="col-md-4">
+        <%= f.text_field :travel_time, class: "form-control"  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-8 col-md-offset-4">
+        <%= f.submit class: 'btn btn-primary'%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

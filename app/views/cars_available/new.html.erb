@@ -1,12 +1,32 @@
-<%= form_for :car_available do |f| %>
-  <%= f.label :city %>
-  <%= collection_select(:car_available, :city_id, @cities, :id, :name, {:prompt => false}) %><br>
+<div class=container>
+  <div class="row">
+    <%= form_for :car_available,:html => {:class => "form-horizontal center"} do |f| %>
+    <div class="form-group">
+      <%= f.label :city, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= collection_select(:car_available, :city_id, @cities, :id, :name, {:prompt => false}, class: "form-control") %>
+      </div>
+    </div>
 
-  <%= f.label :car %>
-  <%= collection_select(:car_available, :car_id, @cars, :id, :name, {:prompt => false}) %><br>
+    <div class="form-group">
+      <%= f.label :car, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= collection_select(:car_available, :car_id, @cars, :id, :name, {:prompt => false}, class: "form-control") %>
+      </div>
+    </div>
 
-  <%= f.label :rate_per_km %>
-  <%= f.text_field :rate_per_km %><br>
+    <div class="form-group">
+      <%= f.label :rate_per_km, class: "col-md-4 control-label"   %>
+      <div class="col-md-4">
+        <%= f.text_field :rate_per_km, class: "form-control"  %>
+      </div>
+    </div>
 
-  <%= f.submit "Add Route"%>
-<% end %>
+    <div class="form-group">
+      <div class="col-md-8 col-md-offset-4">
+        <%= f.submit class: 'btn btn-primary'%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
