@@ -16,6 +16,13 @@ class CityController < AdminController
     end
   end
 
+  def destroy
+    @city = City.find(params[:id])
+    @city.destroy
+
+    redirect_to admin_cities_path
+  end
+
   private
 
     def city_params

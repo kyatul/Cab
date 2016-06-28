@@ -9,6 +9,10 @@
       <% @cars.each do |car| %>
         <tr>
           <td><%= car.name %></td>
+          <td><%= link_to "Delete", admin_car_path(car),
+               method: :delete,
+               data: {confirm: 'Are you sure?' },
+               class: "btn btn-danger btn-sm "%></td>
         </tr>
       <% end %>
       </table>

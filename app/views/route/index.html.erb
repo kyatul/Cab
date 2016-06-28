@@ -7,6 +7,7 @@
           <th>Destination</th>
           <th>Distance</th>
           <th>Travel Time</th>
+          <th></th>
         </tr>
         <% @routes.each do |route| %>
         <tr>
@@ -14,6 +15,10 @@
           <td><%= route.destination_city.name %></td>
           <td><%= route.distance %></td>
           <td><%= route.travel_time %></td>
+          <td><%= link_to "Delete", admin_route_path(route),
+               method: :delete,
+               data: {confirm: 'Are you sure?' },
+               class: "btn btn-danger btn-sm "%></td>
         </tr>
         <% end %>
       </table>

@@ -17,6 +17,13 @@ class RouteController < AdminController
     end
   end
 
+  def destroy
+    @route = Route.find(params[:id])
+    @route.destroy
+
+    redirect_to admin_routes_path
+  end
+
   private
     def route_params
       params.require(:route).permit(:source_city_id, :destination_city_id, :distance, :travel_time)

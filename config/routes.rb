@@ -18,18 +18,22 @@ Rails.application.routes.draw do
   get 'admin/cities' => 'city#index'
   get 'admin/new-city' => 'city#new'
   post 'admin/new-city' => 'city#create'
+  delete 'admin/city/:id' => 'city#destroy', as: :admin_city
 
   get 'admin/cars' => 'car#index'
   get 'admin/new-car' => 'car#new'
   post 'admin/new-car' => 'car#create'
+  delete 'admin/car/:id' => 'car#destroy', as: :admin_car
 
   get 'admin/routes' => 'route#index'
   get 'admin/new-route' => 'route#new'
   post 'admin/new-route' => 'route#create'
+  delete 'admin/route/:id' => 'route#destroy', as: :admin_route
 
   get 'admin/cars-available' => 'cars_available#index'
   get 'admin/new-car-available' => 'cars_available#new'
   post 'admin/new-car-available' => 'cars_available#create'
+  delete 'admin/car-available/:id' => 'cars_available#destroy', as: :admin_car_available
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

@@ -16,6 +16,13 @@ class CarController < AdminController
     end
   end
 
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+
+    redirect_to admin_cars_path
+  end
+
   private
 
     def car_params

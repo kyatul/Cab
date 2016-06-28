@@ -18,6 +18,13 @@ class CarsAvailableController < AdminController
     end
   end
 
+  def destroy
+    @car_available = CarsAvailable.find(params[:id])
+    @car_available.destroy
+
+    redirect_to admin_cars_available_path
+  end
+
   private
     def car_availability_params
       params.require(:car_available).permit(:city_id, :car_id, :rate_per_km)

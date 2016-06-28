@@ -9,6 +9,10 @@
         <% @cities.each do |city| %>
           <tr>
             <td><%= city.name %></td>
+            <td><%= link_to "Delete", admin_city_path(city),
+                 method: :delete,
+                 data: {confirm: 'Are you sure?' },
+                 class: "btn btn-danger btn-sm "%></td>
           </tr>
         <% end %>
       </table>
