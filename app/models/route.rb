@@ -1,7 +1,8 @@
 class Route < ActiveRecord::Base
   validates :distance, presence: true
   validates :travel_time, presence: true
-  
+  validates :destination_city_id, uniqueness: { scope: :source_city_id, message: "This city route already exist" }
+
   belongs_to :source_city, class_name: City, foreign_key: "source_city_id"
   belongs_to :destination_city, class_name: City, foreign_key: "destination_city_id"
 

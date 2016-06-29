@@ -5,6 +5,7 @@ class RouteController < AdminController
 
   def new
     @cities = City.all
+    @route = Route.new
   end
 
   def create
@@ -15,7 +16,7 @@ class RouteController < AdminController
       redirect_to admin_routes_path
     else
       @cities = City.all
-      
+
       render 'new'
     end
   end
